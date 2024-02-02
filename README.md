@@ -1,4 +1,4 @@
-# Leonard Pak | Personal Site
+# Leonard Pak | Personal Website
 
 ## Template
 
