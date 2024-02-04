@@ -43,7 +43,10 @@ export type SocialSchema = z.infer<typeof socialSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
-const socialCollection = defineCollection({ schema: socialSchema });
+const socialCollection = defineCollection({
+    type: "data",
+    schema: socialSchema
+});
 
 export const collections = {
     'blog': blogCollection,
