@@ -1,0 +1,19 @@
+---
+import { icons } from "@lib/icons";
+interface Props {
+  name: keyof typeof icons;
+  size?: number;
+}
+
+const { name, size = 24 } = Astro.props;
+const { viewPort, path } = icons[name];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox={[0, 0, viewPort, viewPort].join(" ")}
+  style="fill: currentColor;transform: ;msFilter:;"
+  set:html={path}
+/>

@@ -1,4 +1,5 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
+
 const blogSchema = z.object({
     title: z.string(),
     description: z.string(),
@@ -24,13 +25,28 @@ const storeSchema = z.object({
     heroImage: z.string().optional(),
 });
 
+const socialSchema = z.object({
+    name: z.string(),
+    url: z.string().url(),
+    icon: z.union([
+        z.literal('github-logo'),
+        z.literal('telegram-logo'),
+        z.literal('twitter-logo'),
+        z.literal('linkedin-logo'),
+        z.literal('leetcode-logo'),
+    ]),
+});
+
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
+export type SocialSchema = z.infer<typeof socialSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
+const socialCollection = defineCollection({ schema: socialSchema });
 
 export const collections = {
     'blog': blogCollection,
-    'store': storeCollection
-}
+    'store': storeCollection,
+    'social': socialCollection
+};
