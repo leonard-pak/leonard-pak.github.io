@@ -27,13 +27,15 @@ const storeSchema = z.object({
 
 const socialSchema = z.object({
     name: z.string(),
-    url: z.string().url(),
+    url: z.string(),
     icon: z.union([
         z.literal('github-logo'),
         z.literal('telegram-logo'),
         z.literal('twitter-logo'),
         z.literal('linkedin-logo'),
         z.literal('leetcode-logo'),
+        z.literal('envelope'),
+        z.literal('rss-simple'),
     ]),
 });
 
