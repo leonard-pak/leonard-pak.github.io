@@ -15,7 +15,13 @@
       ],
       "@content/*": [
         "src/content/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@config": [
+        "src/config.ts"
       ]
-    }
+    },
   }
 }
