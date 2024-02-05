@@ -12,46 +12,46 @@ const blogSchema = z.object({
     }).optional(),
 });
 
-const storeSchema = z.object({
-    title: z.string(),
-    description: z.string(),
-    custom_link_label: z.string(),
-    custom_link: z.string().optional(),
-    updatedDate: z.coerce.date(),
-    pricing: z.string().optional(),
-    oldPricing: z.string().optional(),
-    badge: z.string().optional(),
-    checkoutUrl: z.string().optional(),
-    heroImage: z.string().optional(),
-});
 
 const socialSchema = z.object({
     name: z.string(),
     url: z.string(),
     icon: z.union([
         z.literal('github-logo'),
-        z.literal('telegram-logo'),
         z.literal('twitter-logo'),
         z.literal('linkedin-logo'),
         z.literal('leetcode-logo'),
-        z.literal('envelope'),
         z.literal('rss-simple'),
+        z.literal('telegram-logo'),
+        z.literal('envelope'),
+    ]),
+});
+
+const contactSchema = z.object({
+    name: z.string(),
+    url: z.string(),
+    icon: z.union([
+        z.literal('telegram-logo'),
+        z.literal('envelope'),
     ]),
 });
 
 export type BlogSchema = z.infer<typeof blogSchema>;
-export type StoreSchema = z.infer<typeof storeSchema>;
 export type SocialSchema = z.infer<typeof socialSchema>;
+export type ContactSchema = z.infer<typeof contactSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
-const storeCollection = defineCollection({ schema: storeSchema });
 const socialCollection = defineCollection({
     type: "data",
     schema: socialSchema
 });
+const contactCollection = defineCollection({
+    type: "data",
+    schema: contactSchema
+});
 
 export const collections = {
     'blog': blogCollection,
-    'store': storeCollection,
-    'social': socialCollection
+    'socials': socialCollection,
+    'contacts': contactCollection
 };
