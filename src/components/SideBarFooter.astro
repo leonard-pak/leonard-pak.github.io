@@ -9,11 +9,7 @@ const socials = (await getCollection("socials")).map(
 ---
 
 <div
-    class="block sticky pointer-events-none bottom-10 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
->
-</div>
-<div
-    class="social-icons px-4 pb-5 pt-1 flex flex-row flex-wrap gap-x-3 gap-y-3 self-center justify-center sticky bottom-0 bg-base-200"
+    class="px-4 pb-5 pt-1 self-stretch sticky bottom-0 bg-base-200 flex flex-row flex-wrap justify-between"
 >
     {
         socials.map(({ name, icon, url }) => (

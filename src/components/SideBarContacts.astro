@@ -8,21 +8,18 @@ const contacts = (await getCollection("contacts")).map(
 );
 ---
 
-<div
-    class="social-icons px-4 pb-5 pt-1 flex flex-col flex-wrap gap-x-6 gap-y-3 self-center justify-center sticky bottom-0 bg-base-200"
->
-    <p class="text-base">Contacts</p>
+<div class="px-4 pb-2 self-stretch bg-base-200">
     {
         contacts.map(({ name, icon, url }) => (
             <a
-                class="flex flex-row justify-between gap-3"
+                class="py-2 w-min link link-hover flex flex-row gap-4 "
                 href={url}
                 target="_blank"
                 aria-label={name}
                 title={name}
             >
-                <p>{url}</p>
                 <Icon name={icon} size={24} />
+                <p>{name}</p>
             </a>
         ))
     }
