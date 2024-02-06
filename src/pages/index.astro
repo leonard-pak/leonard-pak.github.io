@@ -42,15 +42,15 @@ const last_projects = (await getCollection("projects"))
   </div>
 
   {
-    last_projects.map((post) => (
+    last_projects.map((project) => (
       <>
         <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/projects/" + createSlug(post.data.title, post.slug)}
+          title={project.data.title}
+          img={project.data.heroImage}
+          desc={project.data.description}
+          url={"/projects/" + createSlug(project.data.title, project.slug)}
           target="_self"
-          badge={post.data.badge}
+          badge={project.data.badge}
         />
         <div class="divider my-0" />
       </>
