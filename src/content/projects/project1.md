@@ -4,6 +4,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
 pubDate: "Sep 10 2022"
 heroImage: "/post_img.webp"
 tags: ["tokio"]
+badge: 'NEW'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
