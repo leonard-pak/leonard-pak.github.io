@@ -1,8 +1,13 @@
 ---
-import SideBarContacts from "@components/SideBarContacts.astro";
-import SideBarFooter from "@components/SideBarFooter.astro";
-import SideBarMenu from "@components/SideBarMenu.astro";
+import SideBarContacts from "@components/sidebar/SideBarContacts.astro";
+import SideBarFooter from "@components/sidebar/SideBarFooter.astro";
+import SideBarMenu from "@components/sidebar/SideBarMenu.astro";
 import { Image } from "astro:assets";
+
+interface Props {
+  sideBarActiveItemID: string;
+}
+
 const { sideBarActiveItemID } = Astro.props;
 ---
 

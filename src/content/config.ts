@@ -36,22 +36,60 @@ const contactSchema = z.object({
     ]),
 });
 
+const cvScheme = z.object({
+    title: z.string(),
+    description: z.string(),
+    education: z.object({
+        title: z.string(),
+        steps: z.array(z.object({
+            name: z.string(),
+            period: z.string()
+        }))
+    }),
+    experience: z.object({
+        title: z.string(),
+        stage: z.array(z.object({
+            title: z.string(),
+            position: z.string(),
+            period: z.string(),
+            description: z.string()
+        }))
+    }),
+    courses: z.object({
+        title: z.string(),
+        items: z.array(z.object({
+            name: z.string(),
+            url: z.string().url()
+        }))
+    }),
+    skills: z.object({
+        title: z.string(),
+        items: z.array(z.string())
+    })
+});
+
 export type ProjectSchema = z.infer<typeof projectSchema>;
 export type SocialSchema = z.infer<typeof socialSchema>;
 export type ContactSchema = z.infer<typeof contactSchema>;
+export type CVScheme = z.infer<typeof cvScheme>;
 
 const projectsCollection = defineCollection({ schema: projectSchema });
 const socialCollection = defineCollection({
-    type: "data",
+    type: 'data',
     schema: socialSchema
 });
 const contactCollection = defineCollection({
-    type: "data",
+    type: 'data',
     schema: contactSchema
+});
+const cvCollection = defineCollection({
+    type: 'data',
+    schema: cvScheme
 });
 
 export const collections = {
     'projects': projectsCollection,
     'socials': socialCollection,
-    'contacts': contactCollection
+    'contacts': contactCollection,
+    'cv': cvCollection
 };
