@@ -11,34 +11,33 @@ const last_projects = (await getCollection("projects"))
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Leonard Pak</div>
-    <div class="text-3xl py-3 font-bold">
-      Robotic Engineer <span class="font-light">from Russia</span>
-    </div>
+    <div class="text-xl py-1">Привет 👋</div>
+    <div class="text-5xl font-bold">Я, Леонард Пак,</div>
+    <div class="text-3xl py-3 font-bold">Инженер-Разработчик</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal
-        Portfolio Website built with Astro and TailwindCSS. Create in minutes a website
-        with Blog, CV, Project Section, Store and RSS Feed. I hope you find it useful!
+        Я занимаюсь разработкой <b>робототехнических систем</b>, <b
+          >web-сервисов</b
+        > и всяких железок. Смело называю себя <i>fullstack</i> разработчиком, однако
+        <b>backend</b> всё же ближе к ❤️. Тут вы можете посмотреть мои проекты и
+        узнать больше обо мне.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank">
-        Let's connect!</a
-      >
       <a
-        href="https://github.com/manuelernestog/astrofy"
+        class="btn btn-block btn-outline btn-accent"
+        href="https://t.me/mrleonard"
         target="_blank"
-        class="btn btn-outline ml-5"
       >
-        Get This template
-      </a>
+        Всегда на связи!</a
+      >
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">
+      Мои последние проекты {"</>"}
+    </div>
   </div>
 
   {
