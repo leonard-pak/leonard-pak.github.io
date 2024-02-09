@@ -2,10 +2,11 @@
 import SideBarContacts from "@components/sidebar/SideBarContacts.astro";
 import SideBarFooter from "@components/sidebar/SideBarFooter.astro";
 import SideBarMenu from "@components/sidebar/SideBarMenu.astro";
+import ui from "@lib/ui";
 import { Image } from "astro:assets";
 
 interface Props {
-  sideBarActiveItemID: string;
+  sideBarActiveItemID: keyof typeof ui;
 }
 
 const { sideBarActiveItemID } = Astro.props;
@@ -35,10 +36,6 @@ const { sideBarActiveItemID } = Astro.props;
       </a>
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
-    <div
-      class="block sticky pointer-events-none bottom-10 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
-    >
-    </div>
     <SideBarContacts />
     <hr
       class="w-3/4 h-1 mx-auto mb-2 border-0 rounded opacity-5 bg-base-content"

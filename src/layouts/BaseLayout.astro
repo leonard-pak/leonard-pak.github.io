@@ -4,13 +4,14 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import SideBar from "@components/sidebar/SideBar.astro";
 import { SITE_DESCRIPTION, SITE_TITLE, TRANSITION_API } from "@config";
+import ui from "@lib/ui";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   image?: string;
   title?: string;
   description?: string;
-  sideBarActiveItemID?: string;
+  sideBarActiveItemID: keyof typeof ui;
   ogType?: string;
 }
 
