@@ -3,6 +3,7 @@ import Icon from "@components/Icon.astro";
 import HorizontalCard from "@components/cards/HorizontalCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import createSlug from "@lib/createSlug";
+import ui from "@lib/ui";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 
@@ -15,7 +16,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="Projects" sideBarActiveItemID="projects">
+<BaseLayout title={ui.projects.name} sideBarActiveItemID="projects">
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Projects</div>
   </div>
