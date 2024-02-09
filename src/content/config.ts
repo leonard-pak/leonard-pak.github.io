@@ -54,7 +54,7 @@ const cvScheme = z.object({
     }),
     experience: z.object({
         title: z.string(),
-        stage: z.array(z.object({
+        stages: z.array(z.object({
             title: z.string(),
             position: z.string(),
             period: z.string(),

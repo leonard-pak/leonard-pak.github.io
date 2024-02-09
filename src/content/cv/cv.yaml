@@ -1,28 +1,59 @@
 title: Резюме
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-  non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+description:
+  Свой профессиональный путь начинал как программист микроконтроллеров.
+  Постепенно начал осваивать более высокоуровневое программирование, Linux,
+  Unity и ROS. Публикую научные работы по робототехнике. Бакалаварский и магистерский
+  дипломы были связаны с использованием VR/AR/MR в коллаборативной робототехнике.
+  Последние 2 года активно изучаю WEB-разработку, чтобы продвигать свои навыки.
+  Обожаю работать в команде. Интересуюсь системами управления, человеко-машинными
+  интерфейсами, web-технологиями и машинным обучением.
 education:
   title: Образование
   steps:
-    - name: Бакалавриат
-      period: 2017-2021
-    - name: Магистратура
+  # В начале новые
+    - name: МГТУ им. Н. Э. Баумана, степень магистра, Робототехнические
+            системы и мехатроника, диплом с отличием
       period: 2021-2023
+    - name: МГТУ им. Н. Э. Баумана, степень бакалавра, Робототехнические
+            системы и мехатроника, диплом с отличием
+      period: 2017-2021
 experience:
   title: Опыт работы
-  stage:
-    - title: Спутникс
+  stages:
+  # В начале новые
+    - title: МГТУ СТАНКИН
       position: Инженер
-      period: С мая по август 2018
-      description: Разработка печатной платы
-    - title: Спутникс
-      position: Инженер
-      period: С мая по август 2019
-      description: Разработка печатной платы
+      period: Февраль 2022 — Февраль 2024
+      description:
+        Разработка программного обеспечения по управлению мобильным
+        промышленным роботом с манипулятором разработки МГТУ Станкин.
+        Использование ROS2 + С++. Исследование применения VR/AR в
+        коллаборативной робототехнике.
+    - title: Инжиниринговый центр "Автоматики и робототехники", МГТУ им. Н.Э. Баумана
+      position: Техник
+      period: Июль 2020 — Ноябрь 2021
+      description:
+        Разработка мобильного робота по проекту. Разработка интерфейса
+        оператора в Unity3D под шлем виртуальной реальности.
+        Взаимодействие с ROS.
+    - title: ООО "Карфидов Лаб"
+      position: Программист микроконтроллеров
+      period: Май 2020 — Июль 2020
+      description:
+        Разработка системы дистанционного управления мобильным роботом на
+        основе МК STM32 и ESP32 по WiFi.
+    - title: ООО "Карфидов Лаб"
+      position: Программист микроконтроллеров
+      period: Май 2019 — Август 2019
+      description:
+        Программирование и отладка кода под МК STM32 и nRF52. Работа с
+        основной периферией, передача и прием данных по BLE. Монтаж печатных плат.
+    - title: ООО "Спутникс"
+      position: Программист микроконтроллеров
+      period: Ноябрь 2018 — Февраль 2019
+      description:
+        Разработка печатной платы и программного обеспечения под МК STM32
+        по техническому заданию.
 courses:
   title: Сертификаты
   items:
@@ -31,6 +62,25 @@ courses:
 skills:
   title: Навыки
   items:
-    - C++
+    - Altium Designer
+    - MATLAB
+    - Simulink
+    - Embedded systems
     - STM32
-    - ТАУ
+    - ESP32
+    - nRF52
+    - C/C++
+    - Python
+    - Unity
+    - C#
+    - Linux
+    - Git
+    - ROS
+    - Golang
+    - JavaScript
+    - TypeScript
+    - ROS2
+    - SQL
+    - CSS
+    - HTML
+    - Docker
