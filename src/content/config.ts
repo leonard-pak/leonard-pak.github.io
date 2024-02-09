@@ -8,6 +8,10 @@ const icons = z.union([
     z.literal('rss-simple'),
     z.literal('telegram-logo'),
     z.literal('envelope'),
+    z.literal('caret-right'),
+    z.literal('caret-left'),
+    z.literal('file-pdf'),
+    z.literal('video')
 ]);
 
 const projectSchema = z.object({
@@ -36,10 +40,7 @@ const socialSchema = z.object({
 const contactSchema = z.object({
     name: z.string(),
     url: z.string(),
-    icon: z.union([
-        z.literal('telegram-logo'),
-        z.literal('envelope'),
-    ]),
+    icon: icons,
 });
 
 const cvScheme = z.object({
