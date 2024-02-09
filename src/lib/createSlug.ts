@@ -12,7 +12,7 @@ export default function (title: string, staticSlug: string) {
       // replace spaces
       .replace(/\s+/g, '-')
       // remove special characters
-      .replace(/[^\w-]/g, '')
+      .replace(/[^\wА-яЁё-]/g, '')
       // remove leading & trailing separtors
       .replace(/^-+|-+$/g, '')
   );
