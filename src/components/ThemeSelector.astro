@@ -1,11 +1,59 @@
 ---
 import Icon from "@components/Icon.astro";
-
-const darkTheme = "dim";
 ---
 
 <label class="px-4 flex cursor-pointer gap-2">
   <Icon name="sun" />
-  <input type="checkbox" value={darkTheme} class="toggle theme-controller" />
+  <input checked="false" type="checkbox" id="theme-switcher" class="toggle" />
   <Icon name="moon" />
 </label>
+
+<script is:inline>
+  setTheme(document);
+  changeThemeBehavior(document);
+
+  document.addEventListener("astro:before-swap", (ev) =>
+    setTheme(ev.newDocument),
+  );
+
+  document.addEventListener("astro:after-swap", () =>
+    changeThemeBehavior(document),
+  );
+
+  function setTheme(doc) {
+    let theme = "light";
+
+    //local storage is used to override OS theme settings
+    if (localStorage.getItem("theme")) {
+      theme = localStorage.getItem("theme");
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      //OS theme setting detected as dark
+      theme = "dark";
+    }
+
+    doc.documentElement.dataset.theme = theme;
+  }
+
+  function updateTheme(doc, theme) {
+    doc.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("theme", theme);
+  }
+
+  function changeThemeBehavior(doc) {
+    const toggleSwitch = doc.querySelector(
+      'input[type="checkbox"]#theme-switcher',
+    );
+    toggleSwitch.checked = doc.documentElement.dataset.theme === "dark";
+
+    toggleSwitch.addEventListener("change", (e) => {
+      if (e.target.checked) {
+        updateTheme(doc, "dark");
+      } else {
+        updateTheme(doc, "light");
+      }
+    });
+  }
+</script>
