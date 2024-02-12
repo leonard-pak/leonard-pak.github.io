@@ -10,7 +10,7 @@ import { getCollection } from "astro:content";
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = await getCollection("projects");
   projects.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  return paginate(projects, { pageSize: 2 });
+  return paginate(projects, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
