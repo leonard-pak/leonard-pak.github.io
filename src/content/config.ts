@@ -50,7 +50,10 @@ const cvScheme = z.object({
         title: z.string(),
         steps: z.array(z.object({
             name: z.string(),
-            period: z.string()
+            spec: z.string(),
+            year: z.number().or(z.string()),
+            university: z.string(),
+            notes: z.string().optional()
         }))
     }),
     experience: z.object({
@@ -71,7 +74,17 @@ const cvScheme = z.object({
     }),
     skills: z.object({
         title: z.string(),
-        items: z.array(z.string())
+        items: z.array(z.object(
+            {
+                name: z.string(),
+                type: z.union([
+                    z.literal('lang'),
+                    z.literal('system'),
+                    z.literal('tools'),
+                    z.literal('electronics'),
+                ]).optional()
+            }
+        ))
     })
 });
 

@@ -19,8 +19,13 @@ const cv = (await getEntry("cv", "cv")).data;
 
   <div class="time-line-container grid gap-4 mb-10">
     {
-      cv.education.steps.map(({ name, period }) => (
-        <TimeLineElement title={name} subtitle={period} />
+      cv.education.steps.map(({ name, spec, university, year, notes }) => (
+        <TimeLineElement
+          title={name}
+          subtitle={year + (notes ? " | " + notes : "")}
+        >
+          {spec + " | " + university}
+        </TimeLineElement>
       ))
     }
   </div>
@@ -58,8 +63,24 @@ const cv = (await getEntry("cv", "cv")).data;
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">{cv.skills.title}</div>
   </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
+  <div class="flex flex-row flex-wrap justify-between gap-x-6 gap-y-4 mx-6">
+    {
+      cv.skills.items.map(({ name, type }) => (
+        <div
+          class={
+            "badge badge-lg badge-outline " +
+            (type === "lang" ? "badge-secondary" : "") +
+            (type === "system" ? "badge-accent" : "") +
+            (type === "tools" ? "badge-info" : "") +
+            (type === "electronics" ? "badge-success" : "")
+          }
+        >
+          {name}
+        </div>
+      ))
+    }
+  </div>
+  <!-- <ul class="list-disc md:columns-5 columns-2 mx-6">
     {cv.skills.items.map((val) => <li>{val}</li>)}
-  </ul>
+  </ul> -->
 </BaseLayout>
