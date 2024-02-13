@@ -44,6 +44,7 @@ const contactSchema = z.object({
 });
 
 const cvScheme = z.object({
+    cv_path: z.string(),
     title: z.string(),
     description: z.string(),
     education: z.object({
@@ -53,15 +54,17 @@ const cvScheme = z.object({
             spec: z.string(),
             year: z.number().or(z.string()),
             university: z.string(),
+            country: z.string(),
             notes: z.string().optional()
         }))
     }),
     experience: z.object({
         title: z.string(),
         stages: z.array(z.object({
-            title: z.string(),
+            place: z.string(),
             position: z.string(),
             period: z.string(),
+            country: z.string(),
             description: z.string()
         }))
     }),

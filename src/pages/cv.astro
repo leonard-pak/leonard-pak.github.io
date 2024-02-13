@@ -10,7 +10,7 @@ const cv = (await getEntry("cv", "cv")).data;
 <BaseLayout title={cv.title} sideBarActiveItemID="cv">
   <div class="mb-5 flex flex-row content-between">
     <div class="text-3xl w-full font-bold">{cv.title}</div>
-    <a class="btn btn-primary btn-sm" href="/cv.pdf" download>
+    <a class="btn btn-primary btn-sm" href={cv.cv_path} download>
       <Icon name="file-arrow-down" />
       PDF
     </a>
@@ -24,14 +24,16 @@ const cv = (await getEntry("cv", "cv")).data;
 
   <div class="time-line-container grid gap-4 mb-10">
     {
-      cv.education.steps.map(({ name, spec, university, year, notes }) => (
-        <TimeLineElement
-          title={name}
-          subtitle={year + (notes ? " | " + notes : "")}
-        >
-          {spec + " | " + university}
-        </TimeLineElement>
-      ))
+      cv.education.steps.map(
+        ({ name, spec, university, year, country, notes }) => (
+          <TimeLineElement
+            title={name + " | " + spec}
+            subtitle={year + ", " + country}
+          >
+            {university + (notes ? ", " + notes : "")}
+          </TimeLineElement>
+        ),
+      )
     }
   </div>
 
@@ -41,11 +43,16 @@ const cv = (await getEntry("cv", "cv")).data;
 
   <div class="time-line-container mb-10">
     {
-      cv.experience.stages.map(({ title, period, position, description }) => (
-        <TimeLineElement title={title + " | " + position} subtitle={period}>
-          {description}
-        </TimeLineElement>
-      ))
+      cv.experience.stages.map(
+        ({ place, period, position, country, description }) => (
+          <TimeLineElement
+            title={position + " | " + place}
+            subtitle={period + ", " + country}
+          >
+            {description}
+          </TimeLineElement>
+        ),
+      )
     }
   </div>
 
