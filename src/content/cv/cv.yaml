@@ -123,11 +123,11 @@ skills:
       type: tools
     - name: TypeScript
       type: lang
-    - name: SQL
+    - name: PostgreSQL
       type: tools
     - name: Golang
       type: lang
-    - name: Testing
+    - name: CI/CD
       type: tools
     - name: Python
       type: lang
