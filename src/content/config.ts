@@ -11,7 +11,8 @@ const icons = z.union([
     z.literal('caret-right'),
     z.literal('caret-left'),
     z.literal('file-pdf'),
-    z.literal('video')
+    z.literal('video'),
+    z.literal('slideshow'),
 ]);
 
 const projectSchema = z.object({
